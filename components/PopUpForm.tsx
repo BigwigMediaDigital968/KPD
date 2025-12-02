@@ -105,7 +105,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
         <div className="p-6 overflow-y-auto bg-[var(--color1)]">
           {/* Title */}
           <h2 className="text-xl font-semibold text-green-700 text-center mb-1">
-            Let's Connect!
+            Let&#39;s Connect!
           </h2>
           {/* FORM LOGIC */}
           {step === "form" ? (
