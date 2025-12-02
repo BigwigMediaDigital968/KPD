@@ -51,7 +51,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="w-full py-16 font-raleway bg-gray-50 text-black relative">
+    <section className="w-full py-16 font-raleway bg-gradient-to-br from-[var(--color5)] via-[var(--color1)] to-[var(--color3)] text-black relative">
       <div className="w-11/12 md:w-5/6 mx-auto">
         {/* Section Label */}
         <p className="text-gray-500 text-xs tracking-widest uppercase font-semibold text-start">
@@ -85,7 +85,7 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white rounded-2xl border border-neutral-200 p-6 shadow-md h-72 flex flex-col justify-between hover:shadow-lg transition duration-300 relative">
+              <div className="bg-gradient-to-bl from[var(--color2)] via-[var(--color1)] to-[var(--color4)]rounded-2xl border border-neutral-200 p-6 shadow-md h-72 flex flex-col justify-between hover:shadow-lg transition duration-300 relative">
                 {/* Quote Icon */}
                 <FaQuoteLeft className="text-[var(--primary-color)] text-3xl opacity-30 mb-3" />
 

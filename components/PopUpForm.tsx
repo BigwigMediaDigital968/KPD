@@ -2,7 +2,8 @@
 import { useState } from "react";
 import axios from "axios";
 import type { AxiosError } from "axios";
-
+import grass from "../assets/afgsg.jpg";
+import Image from "next/image";
 interface PopupFormProps {
   onClose: () => void;
 }
@@ -80,115 +81,157 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 bg-opacity-50 p-4">
-      <div className="bg-[var(--primary-color)] max-w-sm w-full p-6 rounded-lg shadow-xl relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 overflow-y-auto">
+      {/* POPUP CARD */}
+      <div className="bg-white max-w-sm w-full rounded-xl shadow-2xl overflow-hidden relative max-h-[90vh] flex flex-col">
+        {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-lg font-bold text-white"
+          className="absolute top-3 right-3 text-xl font-bold text-gray-700 hover:text-black"
         >
           ✕
         </button>
 
-        <h2 className="text-xl font-bold text-center mb-1 text-white">
-          Let&apos;s Grow Together!
-        </h2>
-        <p className="text-center mb-4 text-white">
-          Have a question or request? Ask us anything!
-        </p>
+        {/* Header Image */}
+        <div className="w-full h-32">
+          <Image
+            src={grass} // ← Replace with your own greenery image
+            className="w-full h-full object-cover"
+            alt="Header"
+          />
+        </div>
 
-        {step === "form" ? (
-          <form className="space-y-3" onSubmit={handleSendOtp}>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Full Name"
-              className="w-full p-2 border border-white rounded text-white bg-transparent placeholder-gray-200"
-              required
-            />
+        {/* CONTENT */}
+        <div className="p-6 overflow-y-auto bg-[var(--color1)]">
+          {/* Title */}
+          <h2 className="text-xl font-semibold text-green-700 text-center mb-1">
+            Let's Connect!
+          </h2>
+          {/* FORM LOGIC */}
+          {step === "form" ? (
+            <form className="space-y-4" onSubmit={handleSendOtp}>
+              <div>
+                <label className="text-sm font-medium text-gray-700">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full mt-1 p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-green-400"
+                  required
+                />
+              </div>
 
-            <div className="flex gap-2">
+              <div>
+                <label className="text-sm font-medium text-gray-700 ">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full mt-1 p-2 border border-gray-700 rounded-md focus:ring-2 focus:ring-green-400"
+                  required
+                />
+              </div>
+
+              {/* --- Styled divider with plus icon --- */}
+              <div className="flex items-center justify-center my-2">
+                <div className="flex-1 border-t border-gray-300"></div>
+                <span className="mx-2 text-green-700 text-lg font-bold">+</span>
+                <div className="flex-1 border-t border-gray-300"></div>
+              </div>
+
+              {/* Phone Field */}
+              <div>
+                <label className="text-sm font-medium text-gray-700">
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full mt-1 p-2 border border-gray-700 rounded-md focus:ring-2 focus:ring-green-400"
+                  required
+                />
+              </div>
+
+              {/* Purpose */}
+              <div>
+                <label className="text-sm font-medium text-gray-700">
+                  Purpose
+                </label>
+                <select
+                  name="purpose"
+                  value={formData.purpose}
+                  onChange={handleChange}
+                  className="w-full mt-1 p-2 border border-gray-700 rounded-md focus:ring-2 focus:ring-green-400"
+                  required
+                >
+                  <option value="">Select Purpose</option>
+                  <option value="buy">Buy Property</option>
+                  <option value="sell">Sell Property</option>
+                </select>
+              </div>
+
+              {/* Message */}
+              <div>
+                <label className="text-sm font-medium text-gray-700">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={3}
+                  className="w-full mt-1 p-2 border border-gray-700 rounded-md focus:ring-2 focus:ring-green-400"
+                  placeholder="Explain your requirements (minimum 50 characters)"
+                  required
+                ></textarea>
+              </div>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
+              >
+                {loading ? "Sending OTP..." : "Sign Up"}
+              </button>
+            </form>
+          ) : (
+            <form className="space-y-4" onSubmit={handleVerifyOtp}>
+              <label className="text-sm font-medium text-gray-700">
+                Enter OTP
+              </label>
               <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email ID"
-                className="w-1/2 p-2 border border-white rounded text-white bg-transparent placeholder-gray-200"
+                type="text"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                className="w-full mt-1 p-2 border border-gray-700 rounded-md focus:ring-2 focus:ring-green-400"
                 required
               />
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Mobile No."
-                className="w-1/2 p-2 border border-white rounded text-white bg-transparent placeholder-gray-200"
-                required
-              />
-            </div>
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
+              >
+                {loading ? "Verifying..." : "Verify OTP"}
+              </button>
+            </form>
+          )}
 
-            {/* ✅ Purpose Field (Fixed Dropdown Visibility) */}
-            <select
-              name="purpose"
-              value={formData.purpose}
-              onChange={handleChange}
-              className="w-full p-2 border border-white rounded text-white bg-[var(--primary-color)] placeholder-gray-200 focus:outline-none focus:border-[#DA4D42]"
-              required
-            >
-              <option value="" className="text-black bg-white">
-                Select Purpose
-              </option>
-              <option value="buy" className="text-black bg-white">
-                Buy Property
-              </option>
-              <option value="sell" className="text-black bg-white">
-                Sell Property
-              </option>
-            </select>
-
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Explain your requirements (minimum 50 characters)"
-              className="w-full p-2 border border-white rounded text-white bg-transparent placeholder-gray-200"
-              rows={3}
-              required
-            ></textarea>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="bg-[#DA4D42] text-white w-full py-2 rounded-full mt-2 hover:bg-red-700 transition-all"
-            >
-              {loading ? "Sending OTP..." : "Submit Now"}
-            </button>
-          </form>
-        ) : (
-          <form className="space-y-3" onSubmit={handleVerifyOtp}>
-            <input
-              type="text"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-              placeholder="Enter OTP"
-              className="w-full p-2 border border-white rounded text-white bg-transparent placeholder-gray-200"
-              required
-            />
-            <button
-              type="submit"
-              disabled={loading}
-              className="bg-green-600 text-white w-full py-2 rounded-full mt-2 hover:bg-green-700 transition-all"
-            >
-              {loading ? "Verifying..." : "Verify OTP"}
-            </button>
-          </form>
-        )}
-
-        {statusMessage && (
-          <p className="text-sm text-white text-center mt-2">{statusMessage}</p>
-        )}
+          {/* Status Message */}
+          {statusMessage && (
+            <p className="text-sm text-center mt-3 text-gray-700">
+              {statusMessage}
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
