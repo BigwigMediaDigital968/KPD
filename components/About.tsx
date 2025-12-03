@@ -75,7 +75,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-16 bg-gradient-to-br from-[var(--color5)] via-[var(--color1)] to-[var(--color3)]">
+    <section className="relative py-16 bg-gradient-to-r from-gray-50 via-white to-gray-100">
       <div className="w-11/12 md:w-5/6 mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <div>
@@ -115,7 +115,7 @@ const About: React.FC = () => {
           {metrics.map((item, index) => (
             <div
               key={index}
-              className="bg-gradient-to-bl from[var(--color2)] via-[var(--color1)] to-[var(--color4)] rounded-2xl shadow-sm hover:shadow-md p-8 text-center transition"
+              className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md p-8 text-center transition"
             >
               <h3 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] mb-2">
                 <CountUp end={item.value} startCounting={startCount} />

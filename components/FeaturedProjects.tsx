@@ -24,7 +24,7 @@ const projects: Project[] = [
 
 const FeaturedProjects: React.FC = () => {
   return (
-    <section className="py-10 relative bg-gradient-to-tr from[var(--color2)] via-[var(--color1)] to-[var(--color3)]">
+    <section className="py-10 relative">
       <div className="w-11/12 md:w-5/6 mx-auto relative">
         {/* Title */}
         <div className="mb-8">

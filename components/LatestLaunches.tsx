@@ -9,7 +9,7 @@ const LatestLaunches: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
-    <section className="py-12 bg-gradient-to-tr from[var(--color2)] via-[var(--color1)] to-[var(--color3)]">
+    <section className="py-12">
       {/* Title */}
       <div className="w-11/12 md:w-5/6 mx-auto text-center mb-10">
         <p className="uppercase tracking-widest text-gray-500 text-sm mb-2">

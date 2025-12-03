@@ -28,24 +28,58 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-[var(--color5)] via-[var(--color1)] to-[var(--color3)] shadow-md">
-      {/* Main Header ONLY */}
-      <div className="flex items-center justify-between w-11/12 md:w-5/6 mx-auto py-2">
-        {/* Logo */}
-        <div className="flex items-center py-2">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+      {/* Top Bar */}
+      <div className="bg-[var(--primary-color)] text-white">
+        <div className="text-sm py-2 flex justify-between items-center space-x-4 w-11/12 md:w-5/6 mx-auto">
+          <div className="flex space-x-4 ">
+            <Link
+              href="https://www.facebook.com/khalsaproperties"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook className="w-5 h-5 text-white hover:text-[#4267B2]" />
+            </Link>
+            <Link
+              href="https://www.instagram.com/kpd_developers?igsh=MXV5bzI4bjZwczR2bA=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram className="w-5 h-5 text-white hover:text-[#C13584]" />
+            </Link>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex items-center space-x-1">
+              <span className="text-xs">📞</span>
+              <span>+91 9212717362</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <span className="text-xs">✉️</span>
+              <Link href="mailto:info@khalsaproperty.in">
+                info@khalsaproperty.in
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Header */}
+      <div className="flex items-center justify-between w-11/12 md:w-5/6 mx-auto">
+        {/* ✅ Logo aligned left */}
+        <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <Image
               src={logo}
               alt="Khalsa Property Dealers"
               width={100}
               height={50}
-              className="h-14 w-auto object-contain"
+              className="object-contain h-16 w-auto"
               draggable="false"
             />
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* ✅ Desktop Nav aligned right */}
         <nav className="hidden md:flex items-center space-x-6 text-[#04365b] font-medium text-sm">
           {links.map((link) =>
             link.dropdown ? (
@@ -54,13 +88,13 @@ const Navbar: React.FC = () => {
                   <span>{link.label}</span>
                   <ChevronDown size={16} />
                 </button>
-
-                <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                {/* Dropdown Menu */}
+                <div className="absolute left-0 mt-2  bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   {link.dropdown.map((sublink) => (
                     <Link
                       key={sublink.href}
                       href={sublink.href}
-                      className={`block px-4 py-2 whitespace-nowrap ${
+                      className={`block px-4 py-2 whitespace-nowrap  ${
                         pathname === sublink.href
                           ? "bg-gray-100"
                           : "hover:bg-gray-100"
@@ -75,9 +109,9 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-colors ${
+                className={`transition-colors  ${
                   pathname === link.href
-                    ? "border-b-2 border-[var(--secondary-color)] pb-1"
+                    ? "border-b-2 border-[var(--secondary-color)] pb-1 "
                     : "hover:text-[var(--primary-color)]"
                 }`}
               >
@@ -87,7 +121,7 @@ const Navbar: React.FC = () => {
           )}
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center">
           {menuOpen ? (
             <X
@@ -116,17 +150,18 @@ const Navbar: React.FC = () => {
                   {link.label}
                   <ChevronDown
                     size={16}
-                    className={`transition-transform ${propertyOpen ? "rotate-180" : ""}`}
+                    className={`transition-transform ${
+                      propertyOpen ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
-
                 {propertyOpen && (
                   <div className="ml-4 mt-2 space-y-2">
                     {link.dropdown.map((sublink) => (
                       <Link
                         key={sublink.href}
                         href={sublink.href}
-                        onClick={() => setMenuOpen(false)}
+                        onClick={() => setMenuOpen(false)} // ✅ close on click
                         className={`block ${
                           pathname === sublink.href
                             ? "text-[var(--secondary-color)] font-bold"
