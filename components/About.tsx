@@ -82,24 +82,23 @@ const About: React.FC = () => {
           <h2 className="uppercase tracking-widest text-gray-500 text-sm mb-2">
             About Us
           </h2>
-          <h2 className="uppercase text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+          <h2 className="uppercase text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mb-6 tracking-widest">
             Khalsa Property Dealers
           </h2>
 
           <p className="text-md leading-relaxed mb-6 text-gray-700  text-justify">
-            <strong>Khalsa Property Dealers</strong> is among the most trusted
-            real estate firms in North Delhi. Operational in{" "}
-            <strong> Gulabi Bagh, Sanjay Nagar </strong>
-            since 2007. With 18+ years of experience and 3+ offices across Delhi
-            NCR, we have built a legacy of delivering dream homes on time.
-            <br />
-            <br />
-            We believe a home is more than just four walls. With over 65
-            successful projects across India and a portfolio of 2,000+ valued
-            clients, our footprint now extends to{" "}
-            <strong> Goa, Gurugram and Dubai. </strong> We specialize in
-            creating high-value investment opportunities designed to maximize
-            returns in minimal time.
+            At Khalsa Property Dealers, we take pride in being recognized as
+            reliable Real Estate Dealers in Delhi with a strong reputation for
+            professional guidance and honest transactions. Our deep
+            understanding of the Delhi property market allows us to offer
+            unmatched expertise. As your dedicated Real Estate Consultant in
+            Delhi, we help you choose the right property based on your budget,
+            location preference, and long-term goals.
+          </p>
+          <p className="text-md leading-relaxed mb-6 text-gray-700  text-justify">
+            Whether you want to buy your dream home, invest in commercial space,
+            or sell your property at the best market price, our team is here to
+            assist you every step of the way.
           </p>
 
           <a

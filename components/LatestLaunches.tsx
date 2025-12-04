@@ -15,7 +15,7 @@ const LatestLaunches: React.FC = () => {
         <p className="uppercase tracking-widest text-gray-500 text-sm mb-2">
           Properties
         </p>
-        <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] font-amatic">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] tracking-widest">
           LATEST LAUNCHES
         </h2>
       </div>

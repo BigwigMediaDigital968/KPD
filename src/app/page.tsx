@@ -10,6 +10,9 @@ import Testimonials from "../../components/Testimonial";
 import ContactSidebar from "../../components/ContactSidebar";
 import PopupForm from "../../components/PopUpForm";
 import { useEffect, useState } from "react";
+import kpd from "../../assets/grasss.jpg";
+import Image from "next/image";
+import FAQSection from "../../components/Faq";
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -51,11 +54,92 @@ export default function Home() {
       <link rel="canonical" href="https://www.khalsapropertydealers.com/" />
       <Nav />
       <Hero />
+      <section className="py-12 bg-white">
+        <div className="w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* LEFT — IMAGE */}
+          <div className="w-full">
+            <Image
+              src="https://res.cloudinary.com/dqrlkbsdq/image/upload/v1764847004/KPD_Blog_Featured_Image_2_euerkl.png"
+              alt="Real Estate Consultant Delhi"
+              className="rounded-xl shadow-lg w-full object-cover"
+              width={400}
+              height={400}
+            />
+          </div>
+
+          {/* RIGHT — CONTENT */}
+          <div>
+            <h2 className="uppercase text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mb-6 tracking-widest ">
+              Your Trusted Real Estate Consultant in Delhi
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-5">
+              When it comes to finding the perfect home or commercial property,
+              you need expert guidance you can trust. As leading Real Estate
+              Dealers in Delhi, we specialize in:
+            </p>
+
+            <ul className="text-gray-700 space-y-2">
+              <li>● Residential Properties (Flats, Builder Floors, Plots)</li>
+              <li>● Commercial Properties (Shops, Offices, Showrooms)</li>
+              <li>● Real Estate Investment Consultation</li>
+            </ul>
+
+            <p className="text-gray-600 leading-relaxed mt-5">
+              Whether you are a first-time buyer or a seasoned investor, we make
+              the entire process seamless, transparent, and profitable.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 bg-gray-50">
+        <div className="w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* LEFT — CONTENT */}
+          <div>
+            <h2 className="uppercase text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mb-6 tracking-widest">
+              Why Choose Khalsa Property Dealers?
+            </h2>
+
+            <p className="text-gray-600 leading-relaxed mb-5">
+              Reliable, Professional & Customer-Focused
+              <br />
+              We’re known among the top Property Dealers in Delhi for our
+              commitment to quality service and genuine dealings. Here’s why
+              clients trust us:
+            </p>
+
+            <ul className="text-gray-700 space-y-2">
+              <li>✔ 15+ Years of Real Estate Experience</li>
+              <li>✔ Verified & Updated Property Listings</li>
+              <li>✔ Honest Pricing with No Hidden Charges</li>
+              <li>✔ Complete Assistance from Site Visit to Documentation</li>
+              <li>✔ Expertise in Both Residential & Commercial Deals</li>
+              <li>✔ Personalized Consultation for Every Client</li>
+            </ul>
+
+            <p className="text-gray-600 leading-relaxed mt-5">
+              Our goal is simple – to help you buy or sell property with
+              confidence.
+            </p>
+          </div>
+
+          {/* RIGHT — IMAGE */}
+          <div className="w-full">
+            <Image
+              src="https://res.cloudinary.com/dcq2oziz4/image/upload/v1764236089/WhatsApp_Image_2025-11-27_at_1.50.03_PM_1_hbxcts.jpg"
+              alt="Real Estate Consultant Delhi"
+              className="rounded-xl shadow-lg w-full object-cover"
+              width={400}
+              height={400}
+            />
+          </div>
+        </div>
+      </section>
 
       <About />
       <LatestLaunches />
       <Testimonials />
       <FeaturedProjects />
+      <FAQSection />
       <Footer />
       {isPopupOpen && <PopupForm onClose={() => setIsPopupOpen(false)} />}
       <div className="fixed bottom-0 left-0 w-full flex md:hidden z-[9999]">

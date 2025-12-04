@@ -31,7 +31,7 @@ const FeaturedProjects: React.FC = () => {
           <p className="uppercase tracking-widest text-gray-500 text-md">
             Projects
           </p>
-          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mb-6 tracking-widest">
             DELIVERED PROJECTS
           </h2>
         </div>

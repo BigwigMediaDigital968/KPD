@@ -10,42 +10,42 @@ const testimonials = [
   {
     name: "PULKIT",
     message:
-      "I recently worked with KPD to buy my new home, and their team made the entire process smooth and hassle-free.",
+      "Khalsa Property Dealers helped me find the right residential property after months of searching. Truly the best property dealer in Delhi when it comes to genuine listings and honest advice.",
   },
   {
     name: "KIRTI BEDI",
     message:
-      "KPD helped me sell my property quickly and at the best price. Their expertise is unmatched.",
+      "I had been looking for reliable property dealers in Delhi to purchase a family home, and their team guided me perfectly. Very professional and patient throughout the entire process.",
   },
   {
     name: "SAURAV SHARMA",
     message:
-      "I am extremely satisfied with KPD’s services. They guided me professionally through every step of buying my dream home.",
+      " One of the most trustworthy real estate dealers in Delhi. They showed only verified homes and made sure I understood all the details before finalizing anything.",
   },
   {
     name: "ANITA DESAI",
     message:
-      "Buying my first property with KPD was a stress-free experience. Highly recommended!",
+      "Their team acted as a genuine real estate consultant in Delhi and helped me choose the right builder floor. I really appreciate their transparent approach.",
   },
   {
     name: "RAHUL VERMA",
     message:
-      "The team at KPD is professional and trustworthy. They made selling my property easy and efficient.",
+      " Khalsa Property Dealers is definitely the best property dealer in Delhi. They helped me buy my first home and made the entire experience easy and comfortable.",
   },
   {
     name: "PRIYA KAPOOR",
     message:
-      "KPD’s attention to detail and commitment to clients is outstanding. I couldn’t ask for a better experience.",
+      " I contacted several property dealers in Delhi, but none were as helpful as Khalsa Property Dealers. They understood exactly what I needed and suggested the perfect residential options.",
   },
   {
     name: "RAJ SINGH",
     message:
-      "Thanks to KPD, my property sale was fast and smooth. Truly reliable real estate experts.",
+      " What I liked most is that they worked like a dedicated real estate consultant in Delhi. They guided me on area advantages, pricing, and future value without any pressure.",
   },
   {
     name: "NEHA GUPTA",
     message:
-      "KPD helped me find the perfect home within my budget. Excellent service and guidance throughout!",
+      "Highly recommended for anyone buying a home. These are truly reliable real estate dealers in Delhi who focus on customer needs rather than just closing a deal.",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function Testimonials() {
         </p>
 
         {/* Heading */}
-        <h2 className="text-2xl md:text-4xl font-semibold text-[var(--primary-color)] mt-2 text-start mb-8 border-l-4 border-[var(--primary-color)] pl-3 font-amatic">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-start mb-8 tracking-widest">
           WHAT PEOPLE SAY
         </h2>
 

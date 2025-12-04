@@ -69,8 +69,7 @@ const Hero: React.FC = () => {
       {/* Text Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 md:px-20">
         <h1 className=" text-2xl md:text-4xl mb-3 max-w-4xl font-semibold leading-relaxed">
-          Find your perfect space with Delhi’s most trusted property
-          dealer.{" "}
+          Find Your Perfect Space with the Best Property Dealer in Delhi{" "}
         </h1>
         <h2 className="text-sm md:text-lg italic mb-6">
           <span className="text-white text-base md:text-3xl font-bold">
