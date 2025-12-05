@@ -139,7 +139,7 @@ export default async function BlogDetails({
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
 
-        {relatedBlogs.length > 0 && (
+        {/* {relatedBlogs.length > 0 && (
           <aside className="lg:col-span-1 bg-gray-50 p-5 rounded-2xl shadow-sm h-fit mt-10">
             <h2 className="text-2xl font-semibold mb-4 text-gray-900 border-b border-gray-200 pb-2">
               Related Blogs
@@ -154,7 +154,7 @@ export default async function BlogDetails({
               ))}
             </div>
           </aside>
-        )}
+        )} */}
       </div>
 
       <section className="bg-[var(--primary-color)] text-white text-center py-16 px-6 mt-20">
