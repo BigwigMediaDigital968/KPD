@@ -83,7 +83,7 @@ export default async function BlogDetails({
       />
       <meta property="og:type" content="article" />
       <meta property="og:site_name" content="Khalsa Property Dealers" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       {/* Schema Markup */}
       {Array.isArray(blog.schemaMarkup) &&
