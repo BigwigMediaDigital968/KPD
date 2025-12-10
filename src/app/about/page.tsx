@@ -52,20 +52,19 @@ const About: React.FC = () => {
             <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-start mb-8 tracking-widest">
               About Us
             </h2>
-            <p className="md:text-lg">
+            <p className="md:text-lg text-justify">
               With our area ability and accomplished professionals, we are able
               to accommodate our clients Construction and Architectural
               Services. We take affairs for accomplishment residential
               apartments, Kothis, Villas & barrio as per the claim of customer.
             </p>
-            <p className="md:text-lg">
+            <p className="md:text-lg text-justify">
               Also we are in Real Estate Consultancy Services like Industrial
-              Property, Warehouse Services, Commercial Property Services and
-              Property Renting Services in Delhi/NCR. Our aggregation of
-              adolescent, acute and professionals is competent and self-assured
-              to appease our clients optimally.
+              Property, Warehouse Services, and Commercial Property in
+              Delhi/NCR. Our aggregation of adolescent, acute and professionals
+              is competent and self-assured to appease our clients optimally.
             </p>
-            <p className="md:text-lg">
+            <p className="md:text-lg text-justify">
               These Services have won accolades all over the area due to their
               acquiescence with industry specific standards. In addition, we
               also ensure that the endered Services accommodate optimum
