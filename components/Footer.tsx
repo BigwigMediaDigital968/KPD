@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
             Khalsa Property Dealers, operating in Gulabi Bagh, Sanjay Nagar
             since 2007, is a trusted real estate firm with 18+ years of
             experience With 65+ projects and 2,000+ clients, we now also serve
-            Goa and Dubai, delivering dream homes and high-value investment
+            Goa and Gurugram, delivering dream homes and high-value investment
             opportunities on time.
           </p>
         </div>

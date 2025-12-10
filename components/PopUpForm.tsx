@@ -121,6 +121,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose }) => {
               <input
                 type="tel"
                 name="phone"
+                pattern="\d{10}"
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Mobile No."

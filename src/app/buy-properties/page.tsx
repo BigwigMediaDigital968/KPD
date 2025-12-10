@@ -298,7 +298,7 @@ export default function BuyPage() {
           onClick={() => setIsPopupOpen(true)}
           className="bg-white text-[var(--primary-color)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
         >
-          Get Started
+          Enquire Now
         </button>
       </div>
       {isPopupOpen && <PopupForm onClose={() => setIsPopupOpen(false)} />}

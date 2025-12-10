@@ -68,7 +68,7 @@ const About: React.FC = () => {
   }, []);
 
   const metrics = [
-    { label: "Properties Sold", value: 100 },
+    { label: "Properties Sold", value: 1000 },
     { label: "Khalsa Team Members", value: 20 },
     { label: "Happy Customers", value: 2000 },
     { label: "Projects Completed", value: 65 },
@@ -105,7 +105,7 @@ const About: React.FC = () => {
             href="/about"
             className="inline-block bg-[var(--primary-color)] text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:scale-105 transition"
           >
-            Learn More
+            Know More
           </a>
         </div>
 

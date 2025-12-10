@@ -44,7 +44,7 @@ const About: React.FC = () => {
         href="https://www.khalsapropertydealers.com/about"
       />
       <Navbar />
-      <div className="pt-[80px] md:pt-[128px]  text-[#04365b] font-[Raleway] bg-white">
+      <div className="pt-[80px] md:pt-[128px]  text-[#04365b] bg-white">
         {/* About Section */}
         <section className=" w-11/12 md:w-5/6 mx-auto flex flex-col md:flex-row items-center gap-8 py-12">
           {/* Left Text */}
@@ -52,19 +52,19 @@ const About: React.FC = () => {
             <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-start mb-8 tracking-widest">
               About Us
             </h2>
-            <p className="md:text-lg text-justify">
+            <p className="text-md leading-relaxed mb-6 text-gray-700  text-justify">
               With our area ability and accomplished professionals, we are able
               to accommodate our clients Construction and Architectural
               Services. We take affairs for accomplishment residential
-              apartments, Kothis, Villas & barrio as per the claim of customer.
+              apartments, kothis, villas & barrio as per the claim of customer.
             </p>
-            <p className="md:text-lg text-justify">
+            <p className=" text-md leading-relaxed mb-6 text-gray-700  text-justify">
               Also we are in Real Estate Consultancy Services like Industrial
               Property, Warehouse Services, and Commercial Property in
               Delhi/NCR. Our aggregation of adolescent, acute and professionals
               is competent and self-assured to appease our clients optimally.
             </p>
-            <p className="md:text-lg text-justify">
+            <p className="text-md leading-relaxed mb-6 text-gray-700  text-justify">
               These Services have won accolades all over the area due to their
               acquiescence with industry specific standards. In addition, we
               also ensure that the endered Services accommodate optimum
@@ -92,11 +92,11 @@ const About: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             {/* Founder Card */}
-            <div className="rounded-xl col-span-1 overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white">
+            <div className="rounded-xl col-span-1 overflow-hidden  transition duration-300">
               <Image
                 src={owner}
                 alt="Founder"
-                className="w-full h-[530px] object-cover"
+                className="w-full h-[330px] object-contain"
               />
             </div>
 
@@ -129,7 +129,7 @@ const About: React.FC = () => {
           onClick={() => setIsPopupOpen(true)}
           className="bg-white text-[var(--primary-color)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
         >
-          Get Started
+          Enquire Now
         </button>
       </div>
       {isPopupOpen && <PopupForm onClose={() => setIsPopupOpen(false)} />}

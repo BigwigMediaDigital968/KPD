@@ -228,7 +228,7 @@ export default async function BlogDetails({
           Ready to Start Your Dream Project?
         </h2>
         <button className="bg-white text-[var(--primary-color)] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-          Get Started
+          Enquire Now
         </button>
       </section>
 

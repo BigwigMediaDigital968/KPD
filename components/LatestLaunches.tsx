@@ -2,7 +2,7 @@
 import img1 from "../assets/akashha.jpeg";
 import React, { useState } from "react";
 import PopupForm from "./PopUpForm";
-import img2 from "../assets/IMG-20211025-WA0004 (1).jpg";
+import img2 from "../assets/sushant lok.jpg";
 import Image from "next/image";
 
 const LatestLaunches: React.FC = () => {
@@ -30,9 +30,7 @@ const LatestLaunches: React.FC = () => {
             className="w-full h-[340px] object-contain "
           />
           <p className="mt-3 text-md font-medium uppercase">AKASHHA</p>
-          <p className="text-xs text-gray-500">
-            Surana & Ambition, Gulabi Bagh
-          </p>
+          <p className="text-xs text-gray-500">Gulabi Bagh</p>
         </div>
 
         {/* Center Content */}
@@ -47,7 +45,7 @@ const LatestLaunches: React.FC = () => {
             onClick={() => setIsPopupOpen(true)}
             className="px-6 py-2 bg-[var(--primary-color)] text-white rounded hover:opacity-85 transition-colors"
           >
-            Contact Us
+            Enquire Now
           </button>
         </div>
 
@@ -55,11 +53,13 @@ const LatestLaunches: React.FC = () => {
         <div className="text-center">
           <Image
             src={img2}
-            alt="Millenium Binghati"
+            alt="Khalsa Property Dealer"
             className="w-full h-[340px] object-contain"
           />
-          <p className="mt-3 text-md font-medium uppercase">3, Sanjay Nagar</p>
-          <p className="text-xs text-gray-500">Gulabi bagh</p>
+          <p className="mt-3 text-md font-medium uppercase">
+            B Block, Sushant Lok
+          </p>
+          <p className="text-xs text-gray-500">Gurugram</p>
         </div>
       </div>
 

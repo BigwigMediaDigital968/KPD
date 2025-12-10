@@ -107,7 +107,7 @@ function Sell() {
         ref={sellRef}
         className="py-12 bg-white w-11/12 md:w-5/6 text-[var(--primary-color)] mx-auto tracking-widest"
       >
-        <h2 className="uppercase text-2xl md:text-3xl font-semibold  font-amatic text-center mb-12 ">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-center mb-8 tracking-widest">
           Our Selling Process
         </h2>
         <div className="grid md:grid-cols-3 gap-10 ">
@@ -146,7 +146,7 @@ function Sell() {
 
       {/* Why Choose Us */}
       <section className="py-12 bg-[var(--bg-color)] text-[var(--primary-color)] tracking-widest">
-        <h2 className="uppercase text-2xl md:text-3xl font-semibold font-amatic text-center mb-12">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-center mb-8 tracking-widest">
           Why Sell With Us?
         </h2>
         <div className="grid md:grid-cols-3 gap-10 w-11/12 md:w-5/6 mx-auto">
@@ -182,7 +182,7 @@ function Sell() {
 
       {/* Sell Form */}
       <section className="py-16 bg-white w-11/12 md:w-5/6 mx-auto text-[var(--primary-color)]">
-        <h2 className="uppercase text-2xl md:text-3xl font-semibold font-amatic text-center mb-12  ">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-center mb-8 tracking-widest ">
           Get In Touch With Us
         </h2>
         <div className="grid md:grid-cols-2 gap-10 items-center tracking-widest">
@@ -193,7 +193,7 @@ function Sell() {
             </p>
             <div className="flex items-center gap-3">
               <Phone className="text-[var(--title)]" />
-              <span className="text-md">+91 8368607860</span>
+              <span className="text-md">+91 9212717362</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="text-[var(--title)]" />
@@ -243,7 +243,7 @@ function Sell() {
           onClick={() => setIsPopupOpen(true)}
           className="bg-white text-[var(--primary-color)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
         >
-          Get Started
+          Enquire Now
         </button>
       </div>
       {isPopupOpen && <PopupForm onClose={() => setIsPopupOpen(false)} />}

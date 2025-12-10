@@ -8,25 +8,31 @@ import img1 from "../../../assets/IMG-20211025-WA0004 (1).jpg";
 import img2 from "../../../assets/IMG-20211025-WA0005.jpg";
 import img3 from "../../../assets/IMG-20211025-WA0006 (1).jpg";
 import img4 from "../../../assets/J-3-10_Elevation_View_2nd_Option (1).jpg";
+import sushant from "../../../assets/sushant lok.jpg";
+
 import Image from "next/image";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 const projects = [
   {
+    img: sushant,
+    title: "B Block, Sushant Lok, Gurugram",
+  },
+  {
     img: img1,
-    title: "3, Sanjay Nagar, Gulabi Bagh",
+    title: "3, Sanjay Nagar, Gulabi Bagh, Delhi",
   },
   {
     img: img2,
-    title: "4, Sanjay Nagar, Gulabi Bagh",
+    title: "4, Sanjay Nagar, Gulabi Bagh, Delhi",
   },
   {
     img: img3,
-    title: "P-3/15, DLF-II",
+    title: "P-3/15, DLF-II, Gurugram",
   },
   {
     img: img4,
-    title: "J-3/10, DLF-II",
+    title: "J-3/10, DLF-II, Gurugram",
   },
 ];
 
@@ -108,7 +114,7 @@ function Projects() {
           onClick={() => setIsPopupOpen(true)}
           className="bg-white text-[var(--primary-color)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
         >
-          Get Started
+          Enquire Now
         </button>
       </div>
       {isPopupOpen && <PopupForm onClose={() => setIsPopupOpen(false)} />}
