@@ -25,10 +25,10 @@ const ContactSidebar: React.FC = () => {
 
           {/* Contact Options */}
           <a
-            href="mailto:info@khalsaproperty.in"
+            href="/contact"
             className="w-12 h-24 bg-[var(--primary-color)] flex items-center justify-center text-white cursor-pointer"
           >
-            <div className="flex flex-col items-center justify-center space-y-1">
+            <div className="flex flex-col items-center justify-center space-y-1 gap-2">
               <span className="text-xs rotate-180 writing-vertical">
                 Contact Us
               </span>
