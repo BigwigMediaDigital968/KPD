@@ -8,6 +8,7 @@ import PopupForm from "../../../components/PopUpForm";
 import Image from "next/image";
 import owner from "../../../assets/owner.png";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import logo from "../../../assets/logo.png";
 
 const About: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -53,34 +54,21 @@ const About: React.FC = () => {
               About Us
             </h2>
             <p className="text-md leading-relaxed mb-6 text-gray-700  text-justify">
-              With our area ability and accomplished professionals, we are able
-              to accommodate our clients Construction and Architectural
-              Services. We take affairs for accomplishment residential
-              apartments, kothis, villas & barrio as per the claim of customer.
+              We also offer real estate consultancy services for industrial
+              properties, warehouses, and commercial spaces across Delhi/NCR.
+              Our experienced, young, and dedicated team works confidently and
+              efficiently to meet our clients’ needs.
             </p>
             <p className=" text-md leading-relaxed mb-6 text-gray-700  text-justify">
-              Also we are in Real Estate Consultancy Services like Industrial
-              Property, Warehouse Services, and Commercial Property in
-              Delhi/NCR. Our aggregation of adolescent, acute and professionals
-              is competent and self-assured to appease our clients optimally.
-            </p>
-            <p className="text-md leading-relaxed mb-6 text-gray-700  text-justify">
-              These Services have won accolades all over the area due to their
-              acquiescence with industry specific standards. In addition, we
-              also ensure that the endered Services accommodate optimum
-              achievement to our clients as per their diversified demands.
+              Our services are appreciated because we deliver projects on time
+              and consistently focus on providing the best results tailored to
+              our clients' diverse needs.
             </p>
           </div>
 
           {/* Right Image */}
-          <div className="md:w-1/2">
-            <Image
-              src="https://khalsaproperty.in/image/home-bg.jpg"
-              alt="About Us"
-              className="rounded-xl shadow-lg w-full object-cover"
-              width={200}
-              height={200}
-            />
+          <div className="md:w-1/2 flex justify-center">
+            <Image src={logo} alt="About Us" className=" w-3/4 object-cover" />
           </div>
         </section>
 

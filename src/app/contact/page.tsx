@@ -64,6 +64,9 @@ export default function ContactPage() {
           <p className="mb-4">
             Office No FF-15, 5th Floor, Prabhu Chambers, Mapusa Bardez Goa
           </p>
+
+          <p className="mb-1 text-lg font-semibold">Gurugram, India</p>
+          <p className="mb-4">26 jcm dlf ph-2 gurugram</p>
         </div>
 
         <div className="pt-4">

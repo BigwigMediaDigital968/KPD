@@ -28,11 +28,10 @@ const ContactSidebar: React.FC = () => {
             href="/contact"
             className="w-12 h-24 bg-[var(--primary-color)] flex items-center justify-center text-white cursor-pointer"
           >
-            <div className="flex flex-col items-center justify-center space-y-1 gap-2">
+            <div className="flex flex-col items-center justify-center space-y-1">
               <span className="text-xs rotate-180 writing-vertical">
                 Contact Us
               </span>
-              <FaEnvelope />
             </div>
           </a>
 
