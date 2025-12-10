@@ -145,7 +145,7 @@ export default function Home() {
       <div className="fixed bottom-0 left-0 w-full flex md:hidden z-[9999]">
         <div className="w-1/2 bg-[var(--primary-color)] text-white text-center py-3">
           <a
-            href="tel:+971521110795"
+            href="tel:+919212717362"
             className="w-full flex items-center justify-center gap-2"
           >
             <FaPhoneAlt size={18} />
@@ -154,7 +154,7 @@ export default function Home() {
         </div>
         <div className="w-1/2 bg-white text-green-500 text-center py-3 border-l border-white">
           <a
-            href="https://wa.me/+971521110795"
+            href="https://wa.me/+919212717362"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-2"

@@ -47,24 +47,24 @@ const About: React.FC = () => {
         {/* About Section */}
         <section className=" w-11/12 md:w-5/6 mx-auto flex flex-col md:flex-row items-center gap-8 py-12">
           {/* Left Text */}
-          <div className="md:w-1/2 space-y-4">
-            <h2 className="uppercase text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3 text-justifys">
+          <div className="md:w-1/2 space-y-4 ">
+            <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-start mb-8 tracking-widest">
               About Us
             </h2>
-            <p>
+            <p className="md:text-lg">
               With our area ability and accomplished professionals, we are able
               to accommodate our clients Construction and Architectural
               Services. We take affairs for accomplishment residential
               apartments, Kothis, Villas & barrio as per the claim of customer.
             </p>
-            <p>
+            <p className="md:text-lg">
               Also we are in Real Estate Consultancy Services like Industrial
               Property, Warehouse Services, Commercial Property Services and
               Property Renting Services in Delhi/NCR. Our aggregation of
               adolescent, acute and professionals is competent and self-assured
               to appease our clients optimally.
             </p>
-            <p>
+            <p className="md:text-lg">
               These Services have won accolades all over the area due to their
               acquiescence with industry specific standards. In addition, we
               also ensure that the endered Services accommodate optimum
@@ -86,7 +86,7 @@ const About: React.FC = () => {
 
         {/* Our Founder */}
         <section className="py-12 w-11/12 md:w-5/6 mx-auto">
-          <h3 className="uppercase text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+          <h3 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-start mb-8 tracking-widest">
             Our Founder
           </h3>
 

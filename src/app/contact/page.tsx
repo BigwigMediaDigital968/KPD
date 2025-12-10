@@ -93,19 +93,19 @@ export default function ContactPage() {
             <div className="bg-white rounded-md p-4 flex items-center gap-4 shadow-sm hover:bg-gray-200 transition font-sans">
               <Phone className="w-6 h-6 text-gray-700" />
               <span className="text-sm text-gray-700">
-                +91 8368607860 (India)
+                +91 9212717362 (India)
               </span>
             </div>
 
             {/* WhatsApp Button */}
             <a
-              href="https://wa.me/+918368607860"
+              href="https://wa.me/+919212717362"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-md p-4 flex items-center gap-4 shadow-sm hover:bg-gray-200 transition font-sans"
             >
               <FaWhatsapp className="w-6 h-6 text-green-600" />
-              <span className="text-sm text-gray-700">+91 8368607860</span>
+              <span className="text-sm text-gray-700">+91 9212717362</span>
             </a>
 
             {/* Email Button */}
