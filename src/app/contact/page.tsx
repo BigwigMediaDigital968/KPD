@@ -53,7 +53,7 @@ export default function ContactPage() {
 
           <p className="mb-1 text-lg font-semibold">Delhi, India</p>
           <p className="mb-4">
-            Plot # 2, Sanjay Nagar, Gulabi Bagh, Delhi 110007, India
+            Plot # 2, Sanjay Nagar, Gulabi Bagh, Delhi-110007, India
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-start mb-2">
             Branch Offices
@@ -62,11 +62,12 @@ export default function ContactPage() {
 
           <p className="mb-1 text-lg font-semibold">Goa, India</p>
           <p className="mb-4">
-            Office No FF-15, 5th Floor, Prabhu Chambers, Mapusa Bardez Goa
+            Office No FF-15, 5th Floor, Prabhu Chambers, Mapusa Bardez Goa -
+            403507, India
           </p>
 
           <p className="mb-1 text-lg font-semibold">Gurugram, India</p>
-          <p className="mb-4">26 jcm dlf ph-2 gurugram</p>
+          <p className="mb-4">26 JCM DLF Phase-2 Gurugram - 122008, India</p>
         </div>
 
         <div className="pt-4">
