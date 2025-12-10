@@ -60,9 +60,9 @@ const Footer: React.FC = () => {
           <p className="text-sm leading-relaxed text-gray-300 text-justify mt-3">
             Khalsa Property Dealers, operating in Gulabi Bagh, Sanjay Nagar
             since 2007, is a trusted real estate firm with 18+ years of
-            experience and 3+ offices across Delhi NCR. With 65+ projects and
-            2,000+ clients, we now also serve Goa and Dubai, delivering dream
-            homes and high-value investment opportunities on time.
+            experience With 65+ projects and 2,000+ clients, we now also serve
+            Goa and Dubai, delivering dream homes and high-value investment
+            opportunities on time.
           </p>
         </div>
 
@@ -159,7 +159,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-10 pt-4 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-sm">
+      <div className="border-t border-gray-700 mt-10 mb-10 md:mb-0 pt-4 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-sm">
         {/* Left: Copyright */}
         <p className="text-center sm:text-left">
           © {new Date().getFullYear()}{" "}

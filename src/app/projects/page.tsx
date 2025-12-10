@@ -9,6 +9,7 @@ import img2 from "../../../assets/IMG-20211025-WA0005.jpg";
 import img3 from "../../../assets/IMG-20211025-WA0006 (1).jpg";
 import img4 from "../../../assets/J-3-10_Elevation_View_2nd_Option (1).jpg";
 import Image from "next/image";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 const projects = [
   {
@@ -67,7 +68,7 @@ function Projects() {
 
       {/* Page Header */}
       <section className=" py-12 mt-28 text-center text-black">
-        <h1 className="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-6 font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+        <h1 className="text-2xl md:text-3xl text-center font-semibold text-[var(--primary-color)] mt-2 mb-5 tracking-widest">
           Our Projects
         </h1>
         <p className="mt-2 text-lg">Explore our exclusive developments</p>
@@ -111,7 +112,32 @@ function Projects() {
         </button>
       </div>
       {isPopupOpen && <PopupForm onClose={() => setIsPopupOpen(false)} />}
-      <ContactSidebar />
+      <div className="fixed bottom-0 left-0 w-full flex md:hidden z-[9999]">
+        <div className="w-1/2 bg-[var(--primary-color)] text-white text-center py-3">
+          <a
+            href="tel:+919212717362"
+            className="w-full flex items-center justify-center gap-2"
+          >
+            <FaPhoneAlt size={18} />
+            Call Us
+          </a>
+        </div>
+        <div className="w-1/2 bg-white text-green-500 text-center py-3 border-l border-white">
+          <a
+            href="https://wa.me/+919212717362"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-center gap-2"
+          >
+            <FaWhatsapp size={18} />
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div className="hidden md:block">
+        <ContactSidebar />
+      </div>
       <Footer />
     </div>
   );

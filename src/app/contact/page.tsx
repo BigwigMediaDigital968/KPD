@@ -1,7 +1,7 @@
 // import PhoneInput, { Value } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { Mail, Phone } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 import Footer from "../../../components/Footer";
 import Navbar from "../../../components/Nav";
@@ -46,7 +46,7 @@ export default function ContactPage() {
 
       <section className="w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-8  mt-20 md:mt-32">
         <div className="pt-4">
-          <h2 className="text-xl md:text-2xl mb-2 font-bold text-[var(--primary-color)] font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-start mb-2">
             Head Office
           </h2>
           <hr />
@@ -55,7 +55,7 @@ export default function ContactPage() {
           <p className="mb-4">
             Plot # 2, Sanjay Nagar, Gulabi Bagh, Delhi 110007, India
           </p>
-          <h2 className=" mt-6 text-xl md:text-2xl mb-2 font-bold text-[var(--primary-color)] font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-start mb-2">
             Branch Offices
           </h2>
           <hr />
@@ -73,7 +73,7 @@ export default function ContactPage() {
         </div>
 
         <div className="pt-4">
-          <h2 className="text-xl md:text-2xl mb-2 font-bold text-[var(--primary-color)] font-amatic border-l-4 border-[var(--primary-color)] pl-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary-color)] mt-2 text-start mb-2">
             Get in Touch
           </h2>
           <hr />
@@ -183,7 +183,32 @@ export default function ContactPage() {
         </div>
       </div>
       <Footer />
-      <ContactSidebar />
+      <div className="fixed bottom-0 left-0 w-full flex md:hidden z-[9999]">
+        <div className="w-1/2 bg-[var(--primary-color)] text-white text-center py-3">
+          <a
+            href="tel:+919212717362"
+            className="w-full flex items-center justify-center gap-2"
+          >
+            <FaPhoneAlt size={18} />
+            Call Us
+          </a>
+        </div>
+        <div className="w-1/2 bg-white text-green-500 text-center py-3 border-l border-white">
+          <a
+            href="https://wa.me/+919212717362"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-center gap-2"
+          >
+            <FaWhatsapp size={18} />
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div className="hidden md:block">
+        <ContactSidebar />
+      </div>
     </div>
   );
 }
