@@ -64,12 +64,6 @@ export default function ContactPage() {
           <p className="mb-4">
             Office No FF-15, 5th Floor, Prabhu Chambers, Mapusa Bardez Goa
           </p>
-
-          <p className="text-gray-400 mt-8">
-            Our business operating hours are as follows:
-          </p>
-          <p className="mt-2">Monday: Closed</p>
-          <p className="mt-1">Tuesday to Sunday: 10:30am - 7:00pm</p>
         </div>
 
         <div className="pt-4">
@@ -78,16 +72,14 @@ export default function ContactPage() {
           </h2>
           <hr />
           <p className="mb-4 text-gray-400 font-sans">
-            Please contact us via phone or email below or visit us at our Head
-            Office in Business Bay during operating hours.
+            Please contact us via phone or email below or visit us at our
+            Office.
           </p>
 
           <div className="flex flex-col gap-4">
             <div className="bg-white rounded-md p-4 flex items-center gap-4 shadow-sm hover:bg-gray-200 transition font-sans">
               <Phone className="w-6 h-6 text-gray-700" />
-              <span className="text-sm text-gray-700">
-                +91 9212717362 (India)
-              </span>
+              <span className="text-sm text-gray-700">+91 9212717362</span>
             </div>
 
             {/* WhatsApp Button */}

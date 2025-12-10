@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
       dropdown: [
         { label: "BUY", href: "/buy-properties" },
         { label: "SELL", href: "/sell-properties" },
-        { label: "OFF-PLAN", href: "/offplan-properties" },
+        // { label: "OFF-PLAN", href: "/offplan-properties" },
       ],
     },
     { label: "PROJECTS", href: "/projects" },
