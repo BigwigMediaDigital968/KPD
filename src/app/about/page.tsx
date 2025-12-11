@@ -54,15 +54,19 @@ const About: React.FC = () => {
               About Us
             </h2>
             <p className="text-md leading-relaxed mb-6 text-gray-700  text-justify">
-              We also offer real estate consultancy services for industrial
-              properties, warehouses, and commercial spaces across Delhi/NCR.
-              Our experienced, young, and dedicated team works confidently and
-              efficiently to meet our clients’ needs.
+              Khalsa Property Dealers has been a trusted name in Delhi’s Real
+              Estate market since 2001, delivering homes that combine value,
+              vision, and reliability. With 24+ years of industry expertise and
+              a strong presence through 3 offices, we have completed 65
+              successful projects and proudly served more than 2,000 clients.
+              From Gulabi Bagh, Delhi, to emerging markets in Goa and Gurugram,
+              we continue to expand our footprint while helping families and
+              investors discover properties that truly match their goals.
             </p>
             <p className=" text-md leading-relaxed mb-6 text-gray-700  text-justify">
-              Our services are appreciated because we deliver projects on time
-              and consistently focus on providing the best results tailored to
-              our clients' diverse needs.
+              For us, real estate is not just about property dealing - it’s
+              about creating meaningful spaces and high-value investment
+              opportunities that deliver maximum returns in minimum time.
             </p>
           </div>
 
@@ -90,12 +94,17 @@ const About: React.FC = () => {
 
             {/* Founder Statement */}
             <div className="flex flex-col col-span-2 justify-center text-gray-800">
-              <p className="text-xl  leading-relaxed italic font-light text-gray-800">
-                “At <strong>Khalsa Property Dealers</strong>, our mission has
-                always been to deliver homes that bring happiness, security, and
-                trust to every family. Since 2007, we’ve dedicated ourselves to
-                making real estate simple, transparent, and reliable for all our
-                clients.”
+              <p className="text-xl  leading-relaxed italic font-light text-gray-800 text-justify">
+                “At <strong>Khalsa Property Dealers</strong>, my vision has
+                always been simple: to bring honesty, transparency, and
+                commitment back into real estate. Since the day we began, I’ve
+                believed that a home is more than four walls - it’s a foundation
+                for dreams, memories, and financial growth. Every client who
+                walks through our doors becomes a part of our extended family,
+                and their trust drives us to deliver nothing but the best. As we
+                continue to grow across India, our promise remains unchanged: to
+                provide dependable guidance, timely delivery, and investments
+                that secure a brighter future for you and your family.”
               </p>
               <span className="mt-6 block font-semibold text-[var(--primary-color)] text-lg md:text-xl">
                 — Mr. Amandeep Singh, Founder

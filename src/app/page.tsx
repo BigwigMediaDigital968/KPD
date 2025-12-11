@@ -108,7 +108,7 @@ export default function Home() {
             </p>
 
             <ul className="text-gray-700 space-y-2">
-              <li>✔ 15+ Years of Real Estate Experience</li>
+              <li>✔ 24+ Years of Real Estate Experience</li>
               <li>✔ Verified & Updated Property Listings</li>
               <li>✔ Honest Pricing with No Hidden Charges</li>
               <li>✔ Complete Assistance from Site Visit to Documentation</li>
