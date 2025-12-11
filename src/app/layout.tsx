@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -229,6 +230,7 @@ export default function RootLayout({
             ],
           })}
         </Script>
+        <ScrollToTopButton />
       </body>
     </html>
   );
