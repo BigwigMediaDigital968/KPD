@@ -13,7 +13,7 @@
     "framer-motion": "^12.23.22",
     "fuse.js": "^7.1.0",
     "lucide-react": "^0.544.0",
-    "next": "^16.0.7",
+    "next": "16.0.10",
     "prettier": "^3.6.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
