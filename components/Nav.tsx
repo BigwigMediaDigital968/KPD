@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
                   <ChevronDown size={16} />
                 </button>
                 {/* Dropdown Menu */}
-                <div className="absolute left-0 mt-2  bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="absolute left-0 mt-2 w-24  bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   {link.dropdown.map((sublink) => (
                     <Link
                       key={sublink.href}

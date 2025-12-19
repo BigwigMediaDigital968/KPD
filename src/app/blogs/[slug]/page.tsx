@@ -18,6 +18,14 @@ interface BlogType {
   schemaMarkup?: string[];
 }
 
+interface RelatedBlogType {
+  title: string;
+  slug: string;
+  coverImage: string;
+  excerpt: string;
+  datePublished: string;
+}
+
 async function getBlog(slug: string): Promise<BlogType> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/blog/viewblog`, {
     cache: "no-store",
@@ -31,6 +39,17 @@ async function getBlog(slug: string): Promise<BlogType> {
   if (!found) throw new Error("Blog not found");
 
   return found;
+}
+
+async function getRelatedBlogs(slug: string): Promise<RelatedBlogType[]> {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE}/blog/related/${slug}`,
+    { cache: "no-store" }
+  );
+
+  if (!res.ok) return [];
+
+  return res.json();
 }
 
 // ✅ Proper type for dynamic route metadata
@@ -59,19 +78,7 @@ export default async function BlogDetails({
 }) {
   const { slug } = await params;
   const blog = await getBlog(slug);
-
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/blog/viewblog`, {
-    cache: "no-store",
-  });
-  const allBlogs: BlogType[] = await res.json();
-
-  const relatedBlogs = allBlogs
-    .filter(
-      (b) =>
-        b.slug !== blog.slug &&
-        b.category?.toLowerCase() === blog.category?.toLowerCase()
-    )
-    .slice(0, 4);
+  const relatedBlogs = await getRelatedBlogs(slug);
 
   return (
     <div className="bg-white text-black min-h-screen">
@@ -204,24 +211,48 @@ export default async function BlogDetails({
           className="blog-content"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
+      </div>
 
-        {/* {relatedBlogs.length > 0 && (
-          <aside className="lg:col-span-1 bg-gray-50 p-5 rounded-2xl shadow-sm h-fit mt-10">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900 border-b border-gray-200 pb-2">
-              Related Blogs
-            </h2>
-            <div className="space-y-5">
-              {relatedBlogs.map((rel) => (
-                <div key={rel.slug}>
-                  <h3 className="text-base font-semibold text-gray-800 leading-snug line-clamp-2">
+      {relatedBlogs.length > 0 && (
+        <section className="w-11/12 md:w-5/6 mx-auto mt-20">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            Related Blogs
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {relatedBlogs.map((rel) => (
+              <a
+                key={rel.slug}
+                href={`/blogs/${rel.slug}`}
+                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
+              >
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={rel.coverImage}
+                    alt={rel.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-gray-900 line-clamp-2 mb-2">
                     {rel.title}
                   </h3>
+
+                  <p className="text-sm text-gray-500 line-clamp-2">
+                    {rel.excerpt}
+                  </p>
+
+                  <p className="text-xs text-gray-400 mt-3">
+                    {new Date(rel.datePublished).toLocaleDateString()}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </aside>
-        )} */}
-      </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="bg-[var(--primary-color)] text-white text-center py-16 px-6 mt-20">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
