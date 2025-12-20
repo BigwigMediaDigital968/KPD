@@ -117,7 +117,7 @@ export default function PopupFormModern({ onClose }: PopupFormProps) {
               </div>
               <div>
                 <h3 className="text-white text-lg font-semibold">
-                  Let's Grow Together
+                  Get In Touch
                 </h3>
                 <p className="text-sm text-white/80">
                   Quick connect — premium support
