@@ -46,10 +46,13 @@ export default function Home() {
       <meta property="og:site_name" content="Khalsa Property Dealers" />
       <meta property="og:locale" content="en_US" />
 
-      <title>Buy & Sell Real Estate in Delhi NCR & Dubai</title>
+      <title>
+        Property Dealers in Delhi NCR | Buy, Sell & Invest with Khalsa Property
+        Dealers
+      </title>
       <meta
         name="description"
-        content="Looking to buy or sell property in Delhi NCR or Dubai? Khalsa Property Dealers helps you discover verified homes and commercial spaces with complete transparency, expert support, and trusted real estate experience."
+        content="Trusted property dealers in Delhi NCR offering expert assistance to buy, sell, or invest in residential and commercial properties. Get verified deals, best prices, and end-to-end support."
       />
       <link rel="canonical" href="https://www.khalsapropertydealers.com/" />
       <Nav />
