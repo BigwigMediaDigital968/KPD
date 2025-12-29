@@ -7,6 +7,7 @@ import PopupForm from "../../../../components/PopUpForm";
 import Image from "next/image";
 import ContactSidebar from "../../../../components/ContactSidebar";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import BlogSidebar from "../../../../components/BlogSidebar";
 
 export default function BlogClient({
   blog,
@@ -36,7 +37,7 @@ export default function BlogClient({
 
       {/* ======= BLOG HEADER ======= */}
       <section className="w-11/12 md:w-5/6 mx-auto pt-[100px] md:pt-[140px]">
-        <h1 className="text-3xl md:text-5xl font-bold mb-3">{blog.title}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-3">{blog.title}</h1>
         <p className="text-gray-500 mb-6">
           By <span className="font-semibold">{blog.author}</span> •{" "}
           {new Date(blog.datePublished).toLocaleDateString()}
@@ -44,7 +45,7 @@ export default function BlogClient({
       </section>
 
       {blog.coverImage && (
-        <div className="relative w-11/12 md:w-5/6 mx-auto h-[60vh] md:h-[100vh] rounded-xl overflow-hidden">
+        <div className="relative w-11/12 md:w-5/6 mx-auto h-[40vh] md:h-[60vh] lg:h-[100vh] rounded-xl overflow-hidden">
           <Image
             src={blog.coverImage}
             alt={blog.title}
@@ -56,47 +57,20 @@ export default function BlogClient({
       )}
 
       {/* ======= BLOG CONTENT ======= */}
-      <div className="w-11/12 md:w-5/6 mx-auto my-10">
-        <div
-          className="blog-content"
-          dangerouslySetInnerHTML={{ __html: blog.content }}
-        />
-      </div>
+      <section className="w-11/12 md:w-5/6 mx-auto my-14 grid grid-cols-1 lg:grid-cols-12 gap-10">
+        {/* LEFT – BLOG */}
+        <article className="lg:col-span-8">
+          <div
+            className="blog-content prose prose-lg max-w-none"
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+          />
+        </article>
 
-      {/* ======= RELATED BLOGS ======= */}
-      {relatedBlogs.length > 0 && (
-        <section className="w-11/12 md:w-5/6 mx-auto mb-20">
-          <h2 className="text-3xl font-bold mb-8">Related Blogs</h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {relatedBlogs.map((rel) => (
-              <a
-                key={rel.slug}
-                href={`/blogs/${rel.slug}`}
-                className="group bg-white rounded-xl shadow-md hover:shadow-xl transition"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src={rel.coverImage}
-                    alt={rel.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition"
-                  />
-                </div>
-
-                <div className="p-4">
-                  <h3 className="font-semibold mb-2 line-clamp-2">
-                    {rel.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 line-clamp-2">
-                    {rel.excerpt}
-                  </p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
-      )}
+        {/* RIGHT – SIDEBAR */}
+        <div className="lg:col-span-4">
+          <BlogSidebar relatedBlogs={relatedBlogs} />
+        </div>
+      </section>
 
       {/* ======= POPUP ======= */}
       {isPopupOpen && <PopupForm onClose={() => setIsPopupOpen(false)} />}
