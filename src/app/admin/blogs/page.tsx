@@ -59,6 +59,11 @@ export default function AdminBlogsPage() {
     fetchBlogs();
   }, []);
 
+  const stripHtml = (html: string) => {
+    if (!html) return "";
+    return html.replace(/<[^>]*>?/gm, "");
+  };
+
   const handleDelete = async (slug: string) => {
     if (!confirm("Are you sure you want to delete this blog post?")) return;
 
@@ -195,10 +200,9 @@ export default function AdminBlogsPage() {
                 >
                   <td className="px-3 py-2">{blog.title}</td>
                   <td className="px-3 py-2 max-w-[200px]">
-                    <div
-                      className="line-clamp-3 text-gray-300"
-                      dangerouslySetInnerHTML={{ __html: blog.content }}
-                    />
+                    <div className="line-clamp-3 text-gray-300">
+                      {stripHtml(blog.content)}
+                    </div>
                   </td>
                   <td className="px-3 py-2">{blog.author}</td>
                   <td className="px-3 py-2">
