@@ -120,7 +120,7 @@ export default function PopupFormModern({ onClose }: PopupFormProps) {
                   Get In Touch
                 </h3>
                 <p className="text-sm text-white/80">
-                  Quick connect — premium support
+                  Get Expert Property Guidance
                 </p>
               </div>
             </div>
