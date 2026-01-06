@@ -95,6 +95,13 @@ function Sell() {
           </p>
 
           <button
+            onClick={() => setShowForm(!showForm)}
+            className=" mt-5 inline-block bg-[var(--primary-color)] text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:scale-105 transition"
+          >
+            List Your Property
+          </button>
+          <br />
+          <button
             onClick={scrollToNext}
             className="mt-10 animate-bounce border rounded-full w-fit px-1 py-2 mx-auto cursor-pointer"
           >
