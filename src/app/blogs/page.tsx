@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import ContactSidebar from "../../../components/ContactSidebar";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 interface BlogPost {
   _id: string;
@@ -128,9 +129,9 @@ const Blogs = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {currentBlogs.map((blog) => (
-              <div
+              <Link
                 key={blog._id}
-                onClick={() => router.push(`/blogs/${blog.slug}`)}
+                href={`/blogs/${blog.slug}`}
                 className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer group border border-gray-200"
               >
                 {/* Image Section */}
@@ -167,7 +168,7 @@ const Blogs = () => {
                     Read More →
                   </button>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}
