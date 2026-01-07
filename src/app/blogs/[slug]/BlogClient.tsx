@@ -48,7 +48,7 @@ export default function BlogClient({
         <div className="relative w-11/12 md:w-5/6 mx-auto h-[40vh] md:h-[60vh] lg:h-[100vh] rounded-xl overflow-hidden">
           <Image
             src={blog.coverImage}
-            alt={blog.title}
+            alt={blog.coverImageAlt}
             fill
             className="object-cover"
             priority

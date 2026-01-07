@@ -12,6 +12,7 @@ interface BlogPost {
   author: string;
   tags?: string;
   coverImage?: string;
+  coverImageAlt?: string;
   schemaMarkup?: string[]; // ✅ Add this
 }
 
@@ -31,6 +32,7 @@ const AddBlog = ({
     content: "",
     author: "",
     tags: "",
+    coverImageAlt: "",
     coverImage: null as File | null,
 
     schemaMarkup: [""], // initialize with one field
@@ -48,6 +50,7 @@ const AddBlog = ({
         author: existingBlog.author,
         tags: existingBlog.tags || "",
         coverImage: null,
+        coverImageAlt: existingBlog.coverImageAlt || "",
         schemaMarkup:
           existingBlog.schemaMarkup && existingBlog.schemaMarkup.length > 0
             ? existingBlog.schemaMarkup
@@ -106,6 +109,7 @@ const AddBlog = ({
       blogData.append("content", formData.content);
       blogData.append("author", formData.author);
       blogData.append("tags", formData.tags);
+      blogData.append("coverImageAlt", formData.coverImageAlt);
 
       if (formData.coverImage) {
         blogData.append("coverImage", formData.coverImage);
@@ -211,6 +215,20 @@ const AddBlog = ({
             value={formData.tags}
             onChange={handleChange}
           />
+          <input
+            type="text"
+            name="coverImageAlt"
+            placeholder="Cover image alt text (SEO)"
+            className="w-full p-2 border"
+            value={formData.coverImageAlt}
+            onChange={(e) =>
+              setFormData((prev) => ({
+                ...prev,
+                coverImageAlt: e.target.value,
+              }))
+            }
+          />
+
           <input
             type="file"
             accept="image/*"

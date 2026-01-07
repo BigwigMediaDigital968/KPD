@@ -5,6 +5,7 @@ interface BlogType {
   title: string;
   excerpt: string;
   coverImage: string;
+  coverImageAlt: string;
   author: string;
   datePublished: string;
   content: string;
