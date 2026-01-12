@@ -60,6 +60,15 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://www.khalsapropertydealers.com/blogs/${blog.slug}`,
     },
+     openGraph: {
+      title: blog.title,
+      description: blog.excerpt,
+      type: "article",
+      url: `https://www.khalsapropertydealers.com/blogs/${blog.slug}`,
+      images: [{ url: blog.coverImage }],
+      siteName: "KPD",
+      locale: "en_IN",
+    },
   };
 }
 
