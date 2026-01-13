@@ -2,7 +2,7 @@
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import {
   Building,
@@ -13,6 +13,9 @@ import {
   Users,
 } from "lucide-react";
 import Image from "next/image";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+
 
 export default function AdminLayout({
   children,
@@ -22,6 +25,7 @@ export default function AdminLayout({
   const pathname = usePathname();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter();
 
   const navItems = [
     { icon: <Gauge />, label: "Dashboard", to: "/admin" },
@@ -32,6 +36,18 @@ export default function AdminLayout({
     { icon: <Building />, label: "Properties", to: "/admin/properties" },
     { icon: <Handshake />, label: "Sell Requests", to: "/admin/sell-requests" },
   ];
+
+   useEffect(() => {
+    if (!Cookies.get("adminAuth")) {
+      router.replace("/login");
+    }
+  }, []);
+
+const handleLogout = () => {
+  Cookies.remove("adminAuth");
+  router.replace("/login");
+};
+
 
   return (
     <div className="h-screen flex flex-col lg:flex-row overflow-hidden bg-black text-white font-raleway relative">
@@ -95,6 +111,12 @@ export default function AdminLayout({
             />
           ))}
         </nav>
+        <button
+  onClick={handleLogout}
+  className="mt-auto bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded text-sm font-semibold transition"
+>
+  Logout
+</button>
       </aside>
 
       {/* Main Content Area */}
