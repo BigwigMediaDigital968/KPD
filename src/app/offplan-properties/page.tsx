@@ -37,7 +37,7 @@ export default function OffplanPage() {
       .then((res) => res.json())
       .then((data) => {
         const buyProperties = data.filter(
-          (p: Property) => p.purpose?.toLowerCase() === "offplan"
+          (p: Property) => p.purpose?.toLowerCase() === "offplan",
         );
         setProperties(buyProperties);
         setLoading(false);
@@ -56,7 +56,7 @@ export default function OffplanPage() {
   const startIdx = (currentPage - 1) * propertiesPerPage;
   const paginatedProperties = filtered.slice(
     startIdx,
-    startIdx + propertiesPerPage
+    startIdx + propertiesPerPage,
   );
 
   const scrollToNext = () => {
@@ -94,25 +94,29 @@ export default function OffplanPage() {
       {/* <!-- Open Graph Meta Tags --> */}
       <meta
         property="og:title"
-        content="Invest in Off-Plan Properties in Dubai & Gurgaon"
+        content="Invest in Off-Plan Properties in Delhi NCR"
       />
       <meta
         property="og:description"
-        content="Explore upcoming off-plan property projects with flexible payment plans and high ROI. Ideal for investors seeking early entry into top developments."
+        content="Explore upcoming off-plan property projects with
+flexible payment plans and high ROI. Ideal for early-stage property investors."
       />
       <meta
         property="og:image"
-        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2F
+media%2Flogo.258c394f.png&w=256&q=75"
       />
       <meta
         property="og:url"
         content="https://www.khalsapropertydealers.com/offplan-properties"
       />
-      <meta property="og:type" content="article" />
+      <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Khalsa Property Dealers" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       <title>Invest in Off-Plan Properties in Dubai & Gurgaon</title>
+
+      <meta name="title" content="Invest in Off-Plan Properties in Delhi NCR" />
       <meta
         name="description"
         content="Explore upcoming off-plan property projects with flexible payment plans and high ROI. Ideal for investors seeking early entry into top developments."
@@ -266,7 +270,7 @@ export default function OffplanPage() {
                     >
                       {num}
                     </button>
-                  )
+                  ),
                 )}
 
                 <button

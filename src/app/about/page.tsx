@@ -17,25 +17,29 @@ const About: React.FC = () => {
       {/* <!-- Open Graph Meta Tags --> */}
       <meta
         property="og:title"
-        content="Know more about Khalsa Property Dealers"
+        content="Know More About Khalsa Property Dealers"
       />
       <meta
         property="og:description"
-        content="Trusted Real Estate Consultants in Delhi NCR"
+        content="Trusted real estate consultants in Delhi NCR
+offering transparent property solutions, expert guidance, and reliable market insights."
       />
       <meta
         property="og:image"
-        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2F
+media%2Flogo.258c394f.png&w=256&q=75"
       />
       <meta
         property="og:url"
         content="https://www.khalsapropertydealers.com/about"
       />
-      <meta property="og:type" content="article" />
+      <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Khalsa Property Dealers" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       <title>Know more about Khalsa Property Dealers</title>
+
+      <meta name="title" content="Know more about Khalsa Property Dealers" />
       <meta
         name="description"
         content="Trusted Real Estate Consultants in Delhi NCR"

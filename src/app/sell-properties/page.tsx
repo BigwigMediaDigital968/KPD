@@ -45,11 +45,13 @@ function Sell() {
       />
       <meta
         property="og:description"
-        content="Get expert help to sell your property faster and at the right market value. We connect you with verified buyers for a smooth and secure transaction."
+        content="Sell your property faster at the right market value
+with expert assistance. We connect you with verified buyers for smooth transactions."
       />
       <meta
         property="og:image"
-        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2F
+media%2Flogo.258c394f.png&w=256&q=75"
       />
       <meta
         property="og:url"
@@ -57,9 +59,14 @@ function Sell() {
       />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Khalsa Property Dealers" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       <title>Sell Your Property Quickly at Best Price in Delhi NCR</title>
+
+      <meta
+        name="title"
+        content="Sell Your Property Quickly at Best Price in Delhi NCR"
+      />
       <meta
         name="description"
         content="Get expert help to sell your property faster and at the right market value. We connect you with verified buyers for a smooth and secure transaction."

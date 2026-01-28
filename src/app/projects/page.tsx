@@ -43,15 +43,18 @@ function Projects() {
       {/* <!-- Open Graph Meta Tags --> */}
       <meta
         property="og:title"
-        content="Top Residential & Commercial Projects in Delhi & Dubai"
+        content="Top Residential & Commercial Projects in Delhi"
       />
       <meta
         property="og:description"
-        content="Explore a range of verified residential and commercial projects with top builders in Delhi, Gurgaon, and Dubai. Get complete property details and expert advice."
+        content="Explore a range of verified residential and
+commercial projects with top builders in Delhi NCR. Get complete property details and
+expert advice."
       />
       <meta
         property="og:image"
-        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2F
+media%2Flogo.258c394f.png&w=256&q=75"
       />
       <meta
         property="og:url"
@@ -59,12 +62,18 @@ function Projects() {
       />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Khalsa Property Dealers" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       <title>Top Residential & Commercial Projects in Delhi & Dubai</title>
+
+      <meta
+        name="title"
+        content="Top Residential & Commercial Projects in Delhi"
+      />
+
       <meta
         name="description"
-        content="Explore a range of verified residential and commercial projects with top builders in Delhi, Gurgaon, and Dubai. Get complete property details and expert advice."
+        content="Explore a range of verified residential and commercial projects with top builders in Delhi NCR. Get complete property details and expert advice."
       />
       <link
         rel="canonical"

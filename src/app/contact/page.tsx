@@ -13,15 +13,19 @@ export default function ContactPage() {
       {/* <!-- Open Graph Meta Tags --> */}
       <meta
         property="og:title"
-        content="Contact Khalsa Property Dealers | Real Estate Experts in Delhi NCR"
+        content="Contact Khalsa Property Dealers | Real Estate Experts in
+Delhi NCR"
       />
       <meta
         property="og:description"
-        content="Get in touch with Khalsa Property Dealers for expert guidance on buying or selling properties in Delhi, Gurgaon, or Dubai. Reach out today for transparent advice and trusted real estate support."
+        content="Get in touch with Khalsa Property Dealers for
+expert guidance on buying or selling properties in Delhi. Trusted advice and transparent
+support."
       />
       <meta
         property="og:image"
-        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2F
+media%2Flogo.258c394f.png&w=256&q=75"
       />
       <meta
         property="og:url"
@@ -29,14 +33,19 @@ export default function ContactPage() {
       />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Khalsa Property Dealers" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       <title>
         Contact Khalsa Property Dealers | Real Estate Experts in Delhi NCR
       </title>
+
+      <meta
+        name="title"
+        content="Contact Khalsa Property Dealers | Real Estate Experts in Delhi NCR"
+      />
       <meta
         name="description"
-        content="Get in touch with Khalsa Property Dealers for expert guidance on buying or selling properties in Delhi, Gurgaon, or Dubai. Reach out today for transparent advice and trusted real estate support."
+        content="Get in touch with Khalsa Property Dealers for expert guidance on buying or selling properties in Delhi. Reach out today for transparent advice and trusted real estate support."
       />
       <link
         rel="canonical"

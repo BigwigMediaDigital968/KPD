@@ -37,7 +37,7 @@ export default function BuyPage() {
       .then((res) => res.json())
       .then((data) => {
         const buyProperties = data.filter(
-          (p: Property) => p.purpose?.toLowerCase() === "buy"
+          (p: Property) => p.purpose?.toLowerCase() === "buy",
         );
         setProperties(buyProperties);
         setLoading(false);
@@ -56,7 +56,7 @@ export default function BuyPage() {
   const startIdx = (currentPage - 1) * propertiesPerPage;
   const paginatedProperties = filtered.slice(
     startIdx,
-    startIdx + propertiesPerPage
+    startIdx + propertiesPerPage,
   );
 
   const scrollToNext = () => {
@@ -92,15 +92,18 @@ export default function BuyPage() {
       {/* <!-- Open Graph Meta Tags --> */}
       <meta
         property="og:title"
-        content="Buy Property in Delhi NCR, Gurgaon & Dubai | Verified Listings"
+        content="Buy Property in Delhi NCR | Verified Listings"
       />
       <meta
         property="og:description"
-        content="Explore verified residential and commercial properties for sale in Delhi, Gurgaon, and Dubai. Find your dream home or investment property with trusted experts at Khalsa Property Dealers."
+        content="Explore verified residential and commercial
+properties for sale in Delhi NCR. Find your dream home or investment property with trusted
+experts."
       />
       <meta
         property="og:image"
-        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2F
+media%2Flogo.258c394f.png&w=256&q=75"
       />
       <meta
         property="og:url"
@@ -108,14 +111,19 @@ export default function BuyPage() {
       />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Khalsa Property Dealers" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       <title>
         Buy Property in Delhi NCR, Gurgaon & Dubai | Verified Listings
       </title>
+
+      <meta
+        name="title"
+        content="Buy Property in Delhi NCR | Verified Listings"
+      />
       <meta
         name="description"
-        content="Explore verified residential and commercial properties for sale in Delhi, Gurgaon, and Dubai. Find your dream home or investment property with trusted experts at Khalsa Property Dealers."
+        content="Explore verified residential and commercial properties for sale in Delhi NCR. Find your dream home or investment property with trusted experts at Khalsa Property Dealers."
       />
       <link
         rel="canonical"
@@ -270,7 +278,7 @@ export default function BuyPage() {
                     >
                       {num}
                     </button>
-                  )
+                  ),
                 )}
 
                 <button

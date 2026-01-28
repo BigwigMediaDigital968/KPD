@@ -26,17 +26,17 @@ export default function Home() {
   return (
     <div>
       {/* <!-- Open Graph Meta Tags --> */}
-      <meta
-        property="og:title"
-        content="Buy & Sell Real Estate in Delhi NCR & Dubai"
-      />
+      <meta property="og:title" content="Buy & Sell Real Estate in Delhi NCR" />
       <meta
         property="og:description"
-        content="Looking to buy or sell property in Delhi NCR or Dubai? Khalsa Property Dealers helps you discover verified homes and commercial spaces with complete transparency, expert support, and trusted real estate experience."
+        content="Looking to buy or sell property in Delhi NCR?
+Khalsa Property Dealers helps you discover verified homes and commercial spaces with
+complete transparency, expert support, and trusted real estate experience."
       />
       <meta
         property="og:image"
-        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.87c58a64.png&w=256&q=75&dpl=dpl_GkcBtjPsnWVhNpEhUKxk34bPodaq"
+        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2F
+media%2Flogo.258c394f.png&w=256&q=75"
       />
       <meta
         property="og:url"
@@ -44,15 +44,16 @@ export default function Home() {
       />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Khalsa Property Dealers" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       <title>
         Property Dealers in Delhi NCR | Buy, Sell & Invest with Khalsa Property
         Dealers
       </title>
+      <meta name="title" content="Buy & Sell Real Estate in Delhi NCR" />
       <meta
         name="description"
-        content="Trusted property dealers in Delhi NCR offering expert assistance to buy, sell, or invest in residential and commercial properties. Get verified deals, best prices, and end-to-end support."
+        content="Looking to buy or sell property in Delhi NCR? Khalsa Property Dealers helps you discover verified homes and commercial spaces with complete transparency, expert support, and trusted real estate experience."
       />
       <link rel="canonical" href="https://www.khalsapropertydealers.com/" />
       <Nav />
