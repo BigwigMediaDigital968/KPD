@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
               <Facebook className="w-5 h-5 text-white hover:text-[#4267B2]" />
             </Link>
             <Link
-              href="https://www.instagram.com/khalshapropertydealers/"
+              href="https://www.instagram.com/khalsapropertydealers/"
               target="_blank"
               rel="noopener noreferrer"
             >
