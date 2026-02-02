@@ -26,8 +26,7 @@ offering transparent property solutions, expert guidance, and reliable market in
       />
       <meta
         property="og:image"
-        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2F
-media%2Flogo.258c394f.png&w=256&q=75"
+        content="https://res.cloudinary.com/dyum0r6gf/image/upload/v1770033376/logo_9_pdtnjp.webp"
       />
       <meta
         property="og:url"
