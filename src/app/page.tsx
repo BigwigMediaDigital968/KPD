@@ -35,8 +35,7 @@ complete transparency, expert support, and trusted real estate experience."
       />
       <meta
         property="og:image"
-        content="https://www.khalsapropertydealers.com/_next/image?url=%2F_next%2Fstatic%2F
-media%2Flogo.258c394f.png&w=256&q=75"
+        content="https://res.cloudinary.com/dyum0r6gf/image/upload/v1770033007/WhatsApp_Image_2026-02-02_at_5.10.26_PM_mn1xam.jpg"
       />
       <meta
         property="og:url"
