@@ -58,7 +58,7 @@ offering transparent property solutions, expert guidance, and reliable market in
             </h2>
             <p className="text-md leading-relaxed mb-6 text-gray-700  text-justify">
               Khalsa Property Dealers has been a trusted name in Delhi’s Real
-              Estate market since 2001, delivering homes that combine value,
+              Estate market since 2008, delivering homes that combine value,
               vision, and reliability. With 24+ years of industry expertise and
               a strong presence through 3 offices, we have completed 65
               successful projects and proudly served more than 2,000 clients.
