@@ -12,6 +12,7 @@ interface BlogType {
   slug: string;
   category?: string;
   schemaMarkup?: string[];
+  tags?: string[];
 }
 
 interface RelatedBlogType {
@@ -38,7 +39,7 @@ async function getBlog(slug: string): Promise<BlogType> {
 async function getRelatedBlogs(slug: string): Promise<RelatedBlogType[]> {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE}/blog/related/${slug}`,
-    { cache: "no-store" }
+    { cache: "no-store" },
   );
 
   if (!res.ok) return [];
@@ -53,14 +54,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const blog = await getBlog(slug);
+  const keywords = blog.tags?.join(", ") || "";
 
   return {
     title: blog.title,
     description: blog.excerpt,
+    keywords: keywords,
+    authors: [{ name: blog.author }],
     alternates: {
       canonical: `https://www.khalsapropertydealers.com/blogs/${blog.slug}`,
     },
-     openGraph: {
+    openGraph: {
       title: blog.title,
       description: blog.excerpt,
       type: "article",

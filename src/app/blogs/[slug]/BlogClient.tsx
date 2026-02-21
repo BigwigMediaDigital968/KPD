@@ -18,6 +18,8 @@ export default function BlogClient({
 }) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+  console.log(blog);
+
   // ✅ Listen for popup buttons inside blog HTML
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
