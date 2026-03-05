@@ -60,7 +60,7 @@ export default function AdminBlogsPage() {
     fetchBlogs();
   }, []);
 
-  console.log(blogs);
+  // console.log(blogs);
   
 
   const stripHtml = (html: string) => {

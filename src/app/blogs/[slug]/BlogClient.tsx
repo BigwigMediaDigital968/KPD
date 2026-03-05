@@ -23,7 +23,7 @@ export default function BlogClient({
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  console.log(blog);
+  // console.log(blog);
 
   // ✅ Listen for popup buttons inside blog HTML
   useEffect(() => {
