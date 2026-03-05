@@ -13,6 +13,10 @@ interface BlogType {
   category?: string;
   schemaMarkup?: string[];
   tags?: string[];
+  faqs?: {
+    question: string;
+    answer: string;
+  }[];
 }
 
 interface RelatedBlogType {
@@ -44,6 +48,24 @@ async function getRelatedBlogs(slug: string): Promise<RelatedBlogType[]> {
 
   if (!res.ok) return [];
   return res.json();
+}
+
+// Dynamic FAQ Schema generation for each blog
+function generateFaqSchema(blog: BlogType) {
+  if (!blog.faqs || blog.faqs.length === 0) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: blog.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
 }
 
 // ✅ Metadata works here
@@ -83,8 +105,34 @@ export default async function BlogDetails({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
   const blog = await getBlog(slug);
   const relatedBlogs = await getRelatedBlogs(slug);
 
-  return <BlogClient blog={blog} relatedBlogs={relatedBlogs} />;
+  const faqSchema = generateFaqSchema(blog);
+
+  return (
+    <>
+      {/* FAQ Schema */}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
+      )}
+
+      {/* Existing schema markup if stored */}
+      {blog.schemaMarkup?.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schema }}
+        />
+      ))}
+
+      <BlogClient blog={blog} relatedBlogs={relatedBlogs} />
+    </>
+  );
 }

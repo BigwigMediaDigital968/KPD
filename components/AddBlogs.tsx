@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
 
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
 interface BlogPost {
   _id?: string;
   title: string;
@@ -13,7 +18,8 @@ interface BlogPost {
   tags?: string;
   coverImage?: string;
   coverImageAlt?: string;
-  schemaMarkup?: string[]; // ✅ Add this
+  schemaMarkup?: string[];
+  faqs?: FAQ[];
 }
 
 const AddBlog = ({
@@ -34,8 +40,8 @@ const AddBlog = ({
     tags: "",
     coverImageAlt: "",
     coverImage: null as File | null,
-
-    schemaMarkup: [""], // initialize with one field
+    schemaMarkup: [""],
+    faqs: [{ question: "", answer: "" }],
   });
 
   const [submitting, setSubmitting] = useState(false);
@@ -55,6 +61,10 @@ const AddBlog = ({
           existingBlog.schemaMarkup && existingBlog.schemaMarkup.length > 0
             ? existingBlog.schemaMarkup
             : [""], // ✅ No `any` needed
+        faqs:
+          existingBlog.faqs && existingBlog.faqs.length > 0
+            ? existingBlog.faqs
+            : [{ question: "", answer: "" }],
       });
     }
   }, [existingBlog]);
@@ -97,6 +107,37 @@ const AddBlog = ({
     }
   };
 
+  // FAQs Handlers
+  const handleFaqChange = (
+    index: number,
+    field: "question" | "answer",
+    value: string
+  ) => {
+    const updatedFaqs = [...formData.faqs];
+    updatedFaqs[index][field] = value;
+
+    setFormData((prev) => ({
+      ...prev,
+      faqs: updatedFaqs,
+    }));
+  };
+
+  const addFaq = () => {
+    setFormData((prev) => ({
+      ...prev,
+      faqs: [...prev.faqs, { question: "", answer: "" }],
+    }));
+  };
+
+  const removeFaq = (index: number) => {
+    const updatedFaqs = formData.faqs.filter((_, i) => i !== index);
+
+    setFormData((prev) => ({
+      ...prev,
+      faqs: updatedFaqs,
+    }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
@@ -111,6 +152,8 @@ const AddBlog = ({
       blogData.append("tags", formData.tags);
       blogData.append("coverImageAlt", formData.coverImageAlt);
 
+      blogData.append("faqs", JSON.stringify(formData.faqs));
+      
       if (formData.coverImage) {
         blogData.append("coverImage", formData.coverImage);
       }
@@ -236,6 +279,56 @@ const AddBlog = ({
             onChange={handleImageChange}
             required={!existingBlog}
           />
+
+
+          <div>
+            <label className="block font-medium mb-2">FAQs</label>
+
+            {formData.faqs.map((faq, index) => (
+              <div key={index} className="border p-3 mb-3 rounded bg-gray-50">
+                <input
+                  type="text"
+                  placeholder="Question"
+                  value={faq.question}
+                  onChange={(e) =>
+                    handleFaqChange(index, "question", e.target.value)
+                  }
+                  className="w-full p-2 border mb-2"
+                />
+
+                <textarea
+                  placeholder="Answer"
+                  value={faq.answer}
+                  onChange={(e) =>
+                    handleFaqChange(index, "answer", e.target.value)
+                  }
+                  rows={3}
+                  className="w-full p-2 border"
+                />
+
+                <div className="mt-2 flex justify-end">
+                  {formData.faqs.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={() => removeFaq(index)}
+                      className="px-3 py-1 bg-red-500 text-white rounded"
+                    >
+                      Remove
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))}
+
+            <button
+              type="button"
+              onClick={addFaq}
+              className="px-3 py-1 bg-green-600 text-white rounded"
+            >
+              + Add FAQ
+            </button>
+          </div>
+
           <div>
             <label className="block font-medium mb-2">
               Schema Markup (JSON-LD)
@@ -294,11 +387,10 @@ const AddBlog = ({
             </button>
             <button
               type="submit"
-              className={`px-4 py-2 text-white rounded ${
-                submitting
-                  ? "bg-gray-500 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700"
-              }`}
+              className={`px-4 py-2 text-white rounded ${submitting
+                ? "bg-gray-500 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700"
+                }`}
               disabled={submitting}
             >
               {submitting

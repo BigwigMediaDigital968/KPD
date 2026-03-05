@@ -5,6 +5,7 @@ import { Edit, Trash2, Code, ImageIcon } from "lucide-react";
 import Fuse from "fuse.js";
 import dynamic from "next/dynamic";
 import { formatHtml } from "../../../../utils/formatHtml";
+import { log } from "console";
 
 // Replace static import with dynamic:
 const AddBlog = dynamic(() => import("../../../../components/AddBlogs"), {
@@ -58,6 +59,9 @@ export default function AdminBlogsPage() {
   useEffect(() => {
     fetchBlogs();
   }, []);
+
+  console.log(blogs);
+  
 
   const stripHtml = (html: string) => {
     if (!html) return "";

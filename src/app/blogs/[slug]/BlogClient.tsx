@@ -17,6 +17,11 @@ export default function BlogClient({
   relatedBlogs: any[];
 }) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
 
   console.log(blog);
 
@@ -66,6 +71,46 @@ export default function BlogClient({
             className="blog-content prose prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           />
+
+          {/* ===== FAQ SECTION ===== */}
+          {blog.faqs && blog.faqs.length > 0 && (
+            <div className="mt-16">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                Frequently Asked Questions
+              </h2>
+
+              <div className="space-y-4">
+                {blog.faqs.map((faq: any, index: number) => (
+                  <div
+                    key={index}
+                    className="border border-gray-200 rounded-lg overflow-hidden"
+                  >
+                    {/* QUESTION */}
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full text-left px-5 py-4 flex justify-between items-center font-semibold text-lg bg-gray-50 hover:bg-gray-100 transition cursor-pointer"
+                    >
+                      {faq.question}
+
+                      <span className="text-xl">
+                        {openFaq === index ? "−" : "+"}
+                      </span>
+                    </button>
+
+                    {/* ANSWER */}
+                    <div
+                      className={`px-5 overflow-hidden transition-all duration-500 ease-in-out ${openFaq === index ? "max-h-[500px] py-4" : "max-h-0"
+                        }`}
+                    >
+                      <p className="text-black leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </article>
 
         {/* RIGHT – SIDEBAR */}
