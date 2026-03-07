@@ -68,7 +68,62 @@ function generateFaqSchema(blog: BlogType) {
   };
 }
 
-// ✅ Metadata works here
+function generateArticleSchema(blog: BlogType) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: blog.title,
+    description: blog.excerpt,
+    image: blog.coverImage,
+    author: {
+      "@type": "Person",
+      name: blog.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Khalsa Property Dealers",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.khalsapropertydealers.com/logo.png",
+      },
+    },
+    datePublished: blog.datePublished,
+    dateModified: blog.datePublished,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.khalsapropertydealers.com/blogs/${blog.slug}`,
+    },
+  };
+}
+
+function generateBreadcrumbSchema(blog: BlogType) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.khalsapropertydealers.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blogs",
+        item: "https://www.khalsapropertydealers.com/blogs",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: blog.title,
+        item: `https://www.khalsapropertydealers.com/blogs/${blog.slug}`,
+      },
+    ],
+  };
+}
+
+// Metadata works here
 export async function generateMetadata({
   params,
 }: {
@@ -94,11 +149,12 @@ export async function generateMetadata({
       images: [{ url: blog.coverImage }],
       siteName: "KPD",
       locale: "en_IN",
+      publishedTime: blog.datePublished,
+      authors: [blog.author],
     },
   };
 }
 
-// ✅ Server component
 export default async function BlogDetails({
   params,
 }: {
@@ -108,11 +164,28 @@ export default async function BlogDetails({
 
   const blog = await getBlog(slug);
   const relatedBlogs = await getRelatedBlogs(slug);
-
+  const articleSchema = generateArticleSchema(blog);
+  const breadcrumbSchema = generateBreadcrumbSchema(blog);
   const faqSchema = generateFaqSchema(blog);
 
   return (
     <>
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
+        }}
+      />
+
       {/* FAQ Schema */}
       {faqSchema && (
         <script
@@ -123,7 +196,7 @@ export default async function BlogDetails({
         />
       )}
 
-      {/* Existing schema markup if stored */}
+      {/* Existing Custom Schemas */}
       {blog.schemaMarkup?.map((schema, i) => (
         <script
           key={i}

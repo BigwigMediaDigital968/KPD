@@ -16,6 +16,7 @@ export default function BlogClient({
   blog: any;
   relatedBlogs: any[];
 }) {
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -25,7 +26,6 @@ export default function BlogClient({
 
   // console.log(blog);
 
-  // ✅ Listen for popup buttons inside blog HTML
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
