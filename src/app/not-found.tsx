@@ -21,7 +21,6 @@ export default function NotFound() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 pt-50"
         style={{ backgroundColor: "var(--color1)" }}
       >
-        {/* ── Subtle Grid Background ── */}
         <div className="absolute inset-0 pointer-events-none">
           {[20, 40, 60, 80].map((y) => (
             <div
